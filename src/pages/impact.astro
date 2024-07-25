@@ -1,0 +1,102 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import DonElement from "../components/don";
+import { Entete_page_2 } from "../components/entete";
+import Footer from "../components/Footer.astro";
+import Header from "../components/header";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+
+import Diaporama from "../components/diaporama";
+import { Paragraphe_1 } from "../components/paragraphe";
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header client:load />
+    <div class='h-[72px] lg:h-[86px]'></div>
+    <Entete_page_2 client:load image='/header.webp' titre='Notre Impact' />
+    <section class='py-[42px] lg:py-24 px-6 lg:px-0 bg-[#d1edfc]'>
+      <div class='max-w-[1280px] mx-auto'>
+        <Paragraphe_1 image='/image_3.webp'>
+          <div class='lg:pl-6'>
+            <div class='text-3xl lg:text-5xl py-6 font-judson font-bold'>
+              Devenez un acteur du changement en soutenant notre association
+            </div>
+            <div class='mb-6'>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas
+              pariatur voluptatem deserunt saepe tempora magni ipsam veniam
+              deleniti nulla atque error repellat odit, aut dicta optio. Dolorem
+              corporis molestiae nulla.
+            </div>
+            <div class='mb-6'>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas
+              pariatur voluptatem deserunt saepe tempora magni ipsam veniam
+              deleniti nulla atque error repellat odit, aut dicta optio.
+            </div>
+          </div>
+        </Paragraphe_1>
+      </div>
+    </section>
+    <section class='py-[42px] lg:py-24 px-6 lg:px-0'>
+      <div class='max-w-[1280px] mx-auto'>
+        <div
+          class='font-judson font-bold text-3xl lg:text-4xl text-center mb-10'>
+          Notre Impact en chiffre
+        </div>
+        <div class='flex items-start gap-4 flex-col lg:flex-row'>
+          <div class='flex-1 border p-4 lg:p-6 h-auto'>
+            <div class='text-5xl lg:text-6xl h-[120px]'>+100</div>
+            <div>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error
+              aliquam distinctio excepturi,
+            </div>
+          </div>
+          <div class='flex-1 border p-4 lg:p-6 h-auto'>
+            <div class='text-5xl lg:text-6xl h-[120px]'>2034</div>
+            <div>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error
+              aliquam distinctio excepturi,
+            </div>
+          </div>
+          <div class='flex-1 border p-4 lg:p-6 h-auto'>
+            <div class='text-5xl lg:text-6xl h-[120px]'>320</div>
+            <div>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error
+              aliquam distinctio excepturi,
+            </div>
+          </div>
+          <div class='flex-1 border p-4 lg:p-6 h-auto'>
+            <div class='text-5xl lg:text-6xl h-[120px]'>05 villes</div>
+            <div>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error
+              aliquam distinctio excepturi,
+            </div>
+          </div>
+        </div>
+        <div class='flex items-center justify-center py-16'>
+          <div class='w-full max-w-[600px]'>
+            <div class='font-bold text-2xl lg:text-3xl text-center mb-9'>
+              Devenez un acteur du changement en soutenant notre association
+            </div>
+            <div class='flex items-center justify-center'>
+              <a
+                href='/don'
+                class='px-12 py-2 bg-yellow-400 text-orange-900 font-bold rounded-full'
+                >Faire un don</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Diaporama image='/image_3.webp' />
+
+    <DonElement />
+    <Footer />
+  </body>
+</html>

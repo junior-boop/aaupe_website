@@ -1,0 +1,63 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import DonElement from "../../components/don";
+import { Entete_page } from "../../components/entete";
+import Footer from "../../components/Footer.astro";
+import Header from "../../components/header";
+import { SITE_TITLE } from "../../consts";
+
+import Member from "../../components/membre";
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <BaseHead
+      title={`Notre Équipe | ${SITE_TITLE}`}
+      description='Derrière AAUPE, se trouve une équipe passionnée et dévouée qui œuvre chaque jour pour faire avancer notre cause.'
+    />
+    <style>
+      .member {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        padding: 0 24px;
+      }
+
+      @media (min-width: 1080px) {
+        .member {
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+          gap: 36px;
+          padding: 0;
+        }
+
+        .name-member {
+          font-size: 24px;
+        }
+      }
+    </style></head
+  >
+
+  <body>
+    <Header client:load />
+    <div class='h-[72px] lg:h-[86px]'></div>
+    <Entete_page client:load image='/header.webp' titre='Notre équipe' />
+    <div class='h-[72px] lg:h-[86px]'></div>
+    <div class='max-w-[1280px] mx-auto'>
+      <div class='member'>
+        <Member
+          image='/header.webp'
+          name='John Doe'
+          role='secretaire general'
+        />
+        <Member
+          image='/header.webp'
+          name='John Doe'
+          role='secretaire general'
+        />
+      </div>
+    </div>
+    <DonElement />
+    <Footer />
+  </body>
+</html>

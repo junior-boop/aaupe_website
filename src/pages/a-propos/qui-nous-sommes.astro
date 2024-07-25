@@ -1,0 +1,82 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import DonElement from "../../components/don";
+import { Entete_page } from "../../components/entete";
+import Footer from "../../components/Footer.astro";
+import Header from "../../components/header";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
+import Citation from "../../components/citattion";
+import { Paragraphe_1 } from "../../components/paragraphe";
+import Diaporama from "../../components/diaporama";
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header client:load />
+    <div class='h-[72px] lg:h-[86px]'></div>
+    <Entete_page client:load image='/header.webp' titre='Qui nous sommes' />
+    <Citation
+      client:load
+      citation="Il n'y a rien de plus important que de protéger nos enfants."
+      author='Barack Obama'
+    />
+
+    <Paragraphe_1 client:load image='/story.webp'>
+      <div class='text-3xl lg:text-5xl py-6 font-judson font-bold'>
+        Devenez un acteur du changement en soutenant notre association
+      </div>
+      <div class='mb-6'>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas
+        pariatur voluptatem deserunt saepe tempora magni ipsam veniam deleniti
+        nulla atque error repellat odit, aut dicta optio. Dolorem corporis
+        molestiae nulla.
+      </div>
+      <div class='mb-6'>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas
+        pariatur voluptatem deserunt saepe tempora magni ipsam veniam deleniti
+        nulla atque error repellat odit, aut dicta optio. Dolorem corporis
+        molestiae nulla.
+      </div>
+      <div class='mb-6'>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas
+        pariatur voluptatem deserunt saepe tempora magni ipsam veniam deleniti
+        nulla atque error repellat odit, aut dicta optio. Dolorem corporis
+        molestiae nulla.
+      </div>
+    </Paragraphe_1>
+    <div class='h-[72px] lg:h-[86px]'></div>
+    <Paragraphe_1 client:load inverse image='/story.webp'>
+      <div class='text-3xl lg:text-5xl py-6 font-judson font-bold'>
+        Devenez un acteur du changement en soutenant notre association
+      </div>
+      <div class='mb-6'>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas
+        pariatur voluptatem deserunt saepe tempora magni ipsam veniam deleniti
+        nulla atque error repellat odit, aut dicta optio. Dolorem corporis
+        molestiae nulla.
+      </div>
+      <div class='mb-6'>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas
+        pariatur voluptatem deserunt saepe tempora magni ipsam veniam deleniti
+        nulla atque error repellat odit, aut dicta optio. Dolorem corporis
+        molestiae nulla.
+      </div>
+      <div class='mb-6'>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas
+        pariatur voluptatem deserunt saepe tempora magni ipsam veniam deleniti
+        nulla atque error repellat odit, aut dicta optio. Dolorem corporis
+        molestiae nulla.
+      </div>
+      <div class='h-[72px] lg:h-[86px]'></div>
+    </Paragraphe_1>
+
+    <Diaporama image='/image_3.webp' />
+
+    <DonElement />
+    <Footer />
+  </body>
+</html>

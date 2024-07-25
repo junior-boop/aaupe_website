@@ -1,0 +1,90 @@
+<style>
+  .slider-container {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+  }
+  .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 55%;
+    opacity: 0;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .black {
+    background-image: linear-gradient(
+      in oklab to top,
+      black 70%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+
+  .titre_header {
+    font-size: clamp(42px, 11vw, 82px);
+    line-height: 1.2;
+  }
+
+  @media (min-width: 1080px) {
+    .slider-container {
+      height: calc(100vh - 86px);
+    }
+    .slide {
+      height: 100%;
+      opacity: 0;
+    }
+
+    .black {
+      background-image: linear-gradient(
+        in oklab to top,
+        black 0%,
+        rgba(0, 0, 0, 0) 100%
+      );
+    }
+
+    .titre_header {
+      line-height: 1;
+    }
+  }
+</style>
+<div class='slider-container'>
+  <div class='slide' style="background-image: url('/image_1.webp');"></div>
+  <div class='slide' style="background-image: url('/image_2.webp');"></div>
+  <div class='slide' style="background-image: url('/image_3.webp');"></div>
+  <div class='slide' style="background-image: url('/image_4.webp');"></div>
+  <div class='black absolute bottom-0 h-[450px] lg:h-[500px] w-full'>
+    <div class='max-w-[1280px] mx-auto h-full pt-16'>
+      <div
+        class='font-judson titre_header font-bold text-white lg:text-center px-6 lg:px-[72px] pt-16 h-full'>
+        <div class='text-[24px] lg:hidden'>AAUPE</div>
+        Engagement permanent envers les droits des enfants et leurs familles
+      </div>
+    </div>
+  </div>
+</div>
+
+<script
+  is:inline
+  src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js'></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const slides = document.querySelectorAll(".slide");
+    let currentSlide = 0;
+    //@ts-ignore
+    gsap.set(slides[0], { opacity: 1 });
+
+    function nextSlide() {
+      //@ts-ignore
+      gsap.to(slides[currentSlide], { opacity: 0, duration: 1 });
+      currentSlide = (currentSlide + 1) % slides.length;
+      //@ts-ignore
+      gsap.to(slides[currentSlide], { opacity: 1, duration: 1 });
+    }
+
+    setInterval(nextSlide, 7000);
+  });
+</script>

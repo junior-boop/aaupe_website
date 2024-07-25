@@ -1,0 +1,109 @@
+---
+import { RiArrowRightLine } from "./icons";
+---
+
+<style>
+  .parallax-container {
+    height: 90vh;
+    overflow: hidden;
+    position: relative;
+    background-color: black;
+  }
+  .parallax-bg {
+    background-image: url("/benevolat.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 120%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .content {
+    position: relative;
+    height: 90vh;
+    padding: 2rem;
+    background-image: linear-gradient(
+      in oklab to top,
+      #0e0e0e 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+
+  .line_height {
+    line-height: 1.1;
+  }
+
+  @media (min-width: 1024px) {
+    .line_height {
+      line-height: 1.5;
+    }
+  }
+</style>
+<div class='parallax-container'>
+  <div class='parallax-bg'></div>
+  <div class='content'>
+    <div
+      class='max-w-[1280px] mx-auto h-full flex flex-col justify-end py-[32px] lg:py-[62px] text-white'>
+      <div
+        class='font-judson text-4xl lg:text-[72px] font-bold lg:w-[50%] mb-7'
+        style='line-height: 1;'>
+        Devenir Bénévole
+      </div>
+      <div class='lg:w-[50%] mb-4 line_height'>
+        Que vous soyez disponible ponctuellement ou régulièrement, que vous ayez
+        des compétences spécifiques ou simplement l'envie de vous impliquer,
+        nous avons besoin de vous !
+      </div>
+      <a
+        href='/objectif/benevole'
+        class='text-black hover:text-black flex items-center gap-4 pl-4 pr-6 py-3 rounded-full bg-white w-fit'>
+        <svg
+          xmlns='http://www.w3.org/2000/svg'
+          width='32'
+          height='32'
+          viewBox='0 0 24 24'
+          ><path
+            fill='currentColor'
+            d='m16.004 9.414l-8.607 8.607l-1.414-1.414L14.59 8H7.003V6h11v11h-2z'
+          ></path></svg
+        >
+        Suivre le lien
+      </a>
+    </div>
+    <!-- Add more paragraphs here to create scrollable content -->
+  </div>
+</div>
+
+<script
+  is:inline
+  src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js'></script>
+<script
+  is:inline
+  src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js'
+></script>
+
+<script>
+  //@ts-ignore
+  gsap.registerPlugin(ScrollTrigger);
+
+  //@ts-ignore
+  gsap.to(".parallax-bg", {
+    yPercent: -30,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".parallax-container",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+    },
+  });
+</script>
