@@ -17,7 +17,7 @@ interface Data {
 async function getData() {
   const query = gql/* GraphQL */ `
     query MyQuery {
-      articles(stage: PUBLISHED, first: 10) {
+      articles(first: 10, orderBy: publishedAt_DESC, stage: PUBLISHED) {
         title
         titleSlug
         picture {

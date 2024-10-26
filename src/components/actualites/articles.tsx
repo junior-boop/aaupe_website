@@ -10,11 +10,12 @@ interface Article {
         url: string;
     };
     title: string;
-    createdAt: string;
+    publishedAt: string;
     content: {
         html: string;
     };
-    specialsPage: any[]; // Le type exact n'est pas clair à partir des données fournies
+    image: { url: string }[];
+    id: string;
 }
 
 async function getData(slug: string) {
@@ -22,21 +23,18 @@ async function getData(slug: string) {
         query MyQuery {
             article(where: {titleSlug: "${slug}"}, stage: PUBLISHED) {
                 picture {
-                url
-                }
-                title
-                createdAt
-                content {
-                html
-                }
-                specialsPage {
-                slugProgramme
-                theme
-                programme
-                imageEntete {
                     url
                 }
+                image {
+                    url
                 }
+                titleSlug
+                title
+                id
+                content {
+                    html
+                }
+                publishedAt
             }
             }
     `
@@ -76,7 +74,7 @@ export default function Articles_Content({ url }: { url: string }) {
             </div>
             <div className="w-full px-6 mx-auto my-16 lg:w-[650px] lg:px-0">
                 <div className=" text-4xl font-bold">{data?.title}</div>
-                <div>{moment(data?.createdAt).calendar()}</div>
+                <div>{moment(data?.publishedAt).calendar()}</div>
             </div>
             <div className="w-full px-6 mx-auto my-16 lg:w-[650px] lg:px-0 ">
                 {
@@ -85,6 +83,31 @@ export default function Articles_Content({ url }: { url: string }) {
                         : <div dangerouslySetInnerHTML={{ __html: data?.content.html as string }}></div>
                 }
             </div>
+            <div className="w-full px-6 mx-auto my-16 lg:w-[650px] lg:px-0">
+                {
+                    data?.image.length !== 0
+                        // @ts-ignore
+                        ? <Gallerie data={data?.image} />
+                        : null
+                }
+            </div>
         </>
+    )
+}
+
+
+function Gallerie({ data }: { data: { url: string }[] }) {
+
+    const Liste = data.map((el, key) => (
+        <div className="w-full aspect-auto  mb-4 rounded-lg overflow-hidden">
+            <img src={el.url} alt="image gallerie" className="w-full h-full object-cover object-center" />
+        </div>
+    ))
+
+    return (
+        <div>
+            <div className="text-2xl font-bold mb-4">Quelque Images</div>
+            {Liste}
+        </div>
     )
 }
