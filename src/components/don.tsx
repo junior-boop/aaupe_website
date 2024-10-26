@@ -4,7 +4,7 @@ export default function DonElement() {
     return (
         <section className="py-12 lg:py-32">
             <div className="max-w-[1280px] mx-auto lg:flex items-start gap-6 px-6 lg:px-0">
-                <div className="w-full lg:w-[50%] aspect-square bg-slate-300 bg-center bg-no-repeat bg-cover" style={{ backgroundImage: "url('/soutenir.jpg')" }}></div>
+                <div className="w-full lg:w-[50%] aspect-square bg-slate-300 bg-center bg-no-repeat bg-cover rounded-xl" style={{ backgroundImage: "url('/soutenir.jpg')" }}></div>
                 <div className="flex-1">
                     <div className="text-3xl lg:text-5xl lg:px-6 py-6 font-judson font-bold ">
                         Devenez un acteur du changement en soutenant notre association

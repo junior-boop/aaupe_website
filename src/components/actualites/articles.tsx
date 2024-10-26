@@ -98,11 +98,11 @@ export default function Articles_Content({ url }: { url: string }) {
 
 function Gallerie({ data }: { data: { url: string }[] }) {
 
-    const Liste = data.map((el, key) => (
+    const Liste = data !== undefined ? data.map((el, key) => (
         <div className="w-full aspect-auto  mb-4 rounded-lg overflow-hidden">
             <img src={el.url} alt="image gallerie" className="w-full h-full object-cover object-center" />
         </div>
-    ))
+    )) : null
 
     return (
         <div>
