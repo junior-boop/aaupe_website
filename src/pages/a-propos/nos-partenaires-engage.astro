@@ -1,0 +1,131 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import DonElement from "../../components/don";
+import { Entete_page } from "../../components/entete";
+import Footer from "../../components/Footer.astro";
+import Header from "../../components/header";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
+import Section from "../../components/section";
+import { RiArrowRightLine } from "../../components/icons";
+import ContactLine from "../../components/ContactLine.astro";
+import BanniereState from "../../components/Banniere_state.astro";
+
+const data: {
+  src: string;
+}[] = [
+  { src: "/afd.png" },
+  { src: "/tcse.png" },
+  { src: "/samim.png" },
+  { src: "/jyif.png" },
+  { src: "/ecodev.png" },
+  { src: "/pulse.png" },
+  { src: "/lab.png" },
+  { src: "/bidaya.png" },
+];
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      .grid-tmp {
+        @apply grid grid-cols-2 lg:grid-cols-4 gap-6 mb-14;
+      }
+      .partenaire_parent {
+        @apply flex items-center aspect-square justify-center bg-slate-100 rounded-xl;
+      }
+      .partenaire {
+        @apply w-[70%] aspect-square flex items-center justify-center;
+      }
+      .lien {
+        @apply lg:flex gap-4 items-center text-gray-900 hover:text-gray-900;
+
+        span {
+          @apply hidden lg:inline;
+        }
+      }
+
+      .element_1 {
+        line-height: 1.2;
+        @apply w-full lg:w-[50%] text-white;
+      }
+      .break {
+        @apply hidden lg:inline;
+      }
+
+      .info {
+        @apply bg-[#0002] p-4 lg:p-6 text-white rounded-xl;
+      }
+    </style>
+  </head>
+  <body>
+    <Header client:load />
+    <div class='h-[72px] lg:h-[86px]'></div>
+    <BanniereState />
+    <Entete_page client:load image='/aaupe_1.webp' titre='Nos Partenaires' />
+    <Section client:load>
+      <div>
+        <div
+          class='flex items-center justify-between px-4 lg:px-6 py-4 bg-slate-100 mb-6 rounded-xl'>
+          <div>
+            <div class='font-judson font-bold text-lg'>Programme</div>
+            <div class='font-bold text-3xl'>Mon Quartier Propre</div>
+          </div>
+          <div>
+            <a href='/programme/mon-quartier-propre' class='lien'>
+              <span>Plus d'information</span>
+              <RiArrowRightLine className='w-9 h-9' />
+            </a>
+          </div>
+        </div>
+        <div class='grid-tmp'>
+          {
+            data.map((el, key) => (
+              <div class='partenaire_parent'>
+                <div class='partenaire'>
+                  <img src={el.src} alt='' width='100%' height='100%' />
+                </div>
+              </div>
+            ))
+          }
+        </div>
+        <div class='bg-[#116d57] rounded-xl px-4 lg:px-9 py-9'>
+          <div>
+            <div
+              class='font-judson font-bold text-4xl text-white mb-6'
+              style='line-height: 1;'>
+              Contactez nous si vous <br class='break' />souhaitez devenir
+              Partenaires
+            </div>
+            <div class='element_1'>
+              N’hésitez pas à nous contacter, nous serons heureux de répondre à
+              vos questions sur les partenariats institutionnels et les
+              programmes de financement pour soutenir les enfants à risque.
+            </div>
+          </div>
+          <div class='flex flex-col lg:flex-row gap-6 pt-6'>
+            <div class='info'>
+              <div class='text-3xl font-bold font-judson'>Anas El Idrissi</div>
+              <div class='font-semibold font-inter text-lg'>
+                Responsable des Partenariats Entreprises
+              </div>
+              Anas.Smihidrissi@sos-maroc.org
+              <div class='text-lg'>(+212) 6 69 91 85 18</div>
+            </div>
+            <div class='info'>
+              <div class='text-3xl font-bold font-judson'>Imane Borga</div>
+              <div class='font-semibold font-inter text-lg'>
+                Responsable des Partenariats Entreprises
+              </div>
+              imane.borgaa@sos-maroc.org
+              <div class='text-lg'>(+212) 6 04 80 62 00</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Section>
+    <ContactLine />
+    <Footer />
+  </body>
+</html>

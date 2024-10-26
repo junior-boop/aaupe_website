@@ -8,6 +8,10 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
 import Citation from "../../components/citattion";
 import { Paragraphe_1 } from "../../components/paragraphe";
 import Diaporama from "../../components/diaporama";
+import Paralaxe from "../../components/Paralaxe.astro";
+import { RiArrowRightLine } from "../../components/icons";
+import ParalaxeArticle from "../../components/Paralaxe_Article.astro";
+import BanniereState from "../../components/Banniere_state.astro";
 ---
 
 <!doctype html>
@@ -18,63 +22,80 @@ import Diaporama from "../../components/diaporama";
   <body>
     <Header client:load />
     <div class='h-[72px] lg:h-[86px]'></div>
-    <Entete_page client:load image='/header.webp' titre='Qui nous sommes' />
+    <BanniereState />
+    <Entete_page
+      client:load
+      image='/image_slide_5.jpeg'
+      titre='Qui sommes nous?'
+    />
     <Citation
       client:load
-      citation="Il n'y a rien de plus important que de protéger nos enfants."
-      author='Barack Obama'
+      citation='Chaque enfant a le droit de grandir dans un environnement sûr, aimant et stimulant'
+      author=`Convention des Nations Unies relative aux droits de l'enfant`
     />
 
-    <Paragraphe_1 client:load image='/story.webp'>
+    <Paragraphe_1
+      client:load
+      image='https://z-p3-scontent.fnsi1-2.fna.fbcdn.net/v/t39.30808-6/457283673_122135769440303036_3958091095960831671_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEIR4LsV65n1yd49Ba-P7aitZQ-h7tQDiW1lD6Hu1AOJT0njE68qncYXyDzsTW4h3bMwylwyBM27gyzBS_nrtB2&_nc_ohc=QBS5X_sPRLIQ7kNvgFurGph&_nc_zt=23&_nc_ht=z-p3-scontent.fnsi1-2.fna&_nc_gid=AxJjo7jSuiEo4gcHbgg0Xi5&oh=00_AYA4dLahrojHPpTbhba0p2HCn-w9lXEmezAc2MDqLAdupg&oe=670A1FD9'>
       <div class='text-3xl lg:text-5xl py-6 font-judson font-bold'>
-        Devenez un acteur du changement en soutenant notre association
+        Pour un avenir meilleur pour chaque enfant
       </div>
       <div class='mb-6'>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas
-        pariatur voluptatem deserunt saepe tempora magni ipsam veniam deleniti
-        nulla atque error repellat odit, aut dicta optio. Dolorem corporis
-        molestiae nulla.
+        Nous sommes une association dédiée à l'appui et au renforcement des
+        actions de l'unité de protection de l'enfance à Casablanca (AAUPE).
       </div>
       <div class='mb-6'>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas
-        pariatur voluptatem deserunt saepe tempora magni ipsam veniam deleniti
-        nulla atque error repellat odit, aut dicta optio. Dolorem corporis
-        molestiae nulla.
+        Notre mission principale est de soutenir les enfants en situation de
+        vulnérabilité en leur offrant un cadre sécurisé et en leur garantissant
+        un accès à leurs droits fondamentaux, tels que l'éducation, la santé, et
+        la protection contre toutes formes de violence, de maltraitance ou
+        d'exploitation.
       </div>
       <div class='mb-6'>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas
-        pariatur voluptatem deserunt saepe tempora magni ipsam veniam deleniti
-        nulla atque error repellat odit, aut dicta optio. Dolorem corporis
-        molestiae nulla.
+        Nous travaillons en étroite collaboration avec les acteurs locaux, les
+        institutions publiques, et les communautés pour assurer un avenir
+        meilleur à chaque enfant.
       </div>
     </Paragraphe_1>
     <div class='h-[72px] lg:h-[86px]'></div>
-    <Paragraphe_1 client:load inverse image='/story.webp'>
+    <Paragraphe_1 client:load inverse image='/engagement.webp'>
       <div class='text-3xl lg:text-5xl py-6 font-judson font-bold'>
-        Devenez un acteur du changement en soutenant notre association
+        Agir pour les enfants : un engagement quotidien
       </div>
       <div class='mb-6'>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas
-        pariatur voluptatem deserunt saepe tempora magni ipsam veniam deleniti
-        nulla atque error repellat odit, aut dicta optio. Dolorem corporis
-        molestiae nulla.
+        <b> Nos principales actions incluent :</b>
+        <ul>
+          <li>L'accompagnement des enfants en difficulté,</li>
+          <li>
+            La sensibilisation des familles et des communautés à la protection
+            des droits des enfants,
+          </li>
+          <li>
+            La mise en place de programmes de réinsertion et de réhabilitation,
+          </li>
+          <li>
+            La mise en place d’initiatives pour éradiquer le fléau des enfants
+            de la rue et de la mendicité en utilisant les enfants
+          </li>
+          <li>
+            Le plaidoyer pour renforcer les politiques publiques de protection
+            de l’enfance.
+          </li>
+        </ul>
       </div>
       <div class='mb-6'>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas
-        pariatur voluptatem deserunt saepe tempora magni ipsam veniam deleniti
-        nulla atque error repellat odit, aut dicta optio. Dolorem corporis
-        molestiae nulla.
+        Notre objectif est de créer un environnement où chaque enfant peut
+        grandir dans la dignité, la sécurité, et la sérénité.
       </div>
       <div class='mb-6'>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas
-        pariatur voluptatem deserunt saepe tempora magni ipsam veniam deleniti
-        nulla atque error repellat odit, aut dicta optio. Dolorem corporis
-        molestiae nulla.
+        Nous travaillons en étroite collaboration avec les acteurs locaux, les
+        institutions publiques, et les communautés pour assurer un avenir
+        meilleur à chaque enfant.
       </div>
       <div class='h-[72px] lg:h-[86px]'></div>
     </Paragraphe_1>
 
-    <Diaporama image='/image_3.webp' />
+    <ParalaxeArticle />
 
     <DonElement />
     <Footer />

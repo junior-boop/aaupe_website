@@ -1,0 +1,25 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/header";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+
+import BanniereState from "../../components/Banniere_state.astro";
+import DonElement from "../../components/don";
+import Footer from "../../components/Footer.astro";
+import Iframe from "../../components/Iframe";
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header client:load />
+    <div class='h-[72px] lg:h-[86px]'></div>
+    <BanniereState />
+    <Iframe url="/" client:load />
+    <DonElement />
+    <Footer />
+  </body>
+</html>

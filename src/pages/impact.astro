@@ -8,6 +8,10 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 
 import Diaporama from "../components/diaporama";
 import { Paragraphe_1 } from "../components/paragraphe";
+import { RiArrowRightLine } from "../components/icons";
+
+import BanniereState from "../components/Banniere_state.astro";
+import ContactLine from "../components/ContactLine.astro";
 ---
 
 <!doctype html>
@@ -18,8 +22,9 @@ import { Paragraphe_1 } from "../components/paragraphe";
   <body>
     <Header client:load />
     <div class='h-[72px] lg:h-[86px]'></div>
-    <Entete_page_2 client:load image='/header.webp' titre='Notre Impact' />
-    <section class='py-[42px] lg:py-24 px-6 lg:px-0 bg-[#d1edfc]'>
+    <BanniereState />
+    <Entete_page_2 client:load image='/impact.jpg' titre='Notre Impact' />
+    <!-- <section class='py-[42px] lg:py-24 px-6 lg:px-0 bg-[#d1edfc]'>
       <div class='max-w-[1280px] mx-auto'>
         <Paragraphe_1 image='/image_3.webp'>
           <div class='lg:pl-6'>
@@ -40,40 +45,63 @@ import { Paragraphe_1 } from "../components/paragraphe";
           </div>
         </Paragraphe_1>
       </div>
-    </section>
+    </section> -->
     <section class='py-[42px] lg:py-24 px-6 lg:px-0'>
       <div class='max-w-[1280px] mx-auto'>
         <div
-          class='font-judson font-bold text-3xl lg:text-4xl text-center mb-10'>
-          Notre Impact en chiffre
+          class='font-judson font-bold text-3xl lg:text-6xl text-center mb-10'>
+          Impact de nos actions
         </div>
-        <div class='flex items-start gap-4 flex-col lg:flex-row'>
-          <div class='flex-1 border p-4 lg:p-6 h-auto'>
-            <div class='text-5xl lg:text-6xl h-[120px]'>+100</div>
+        <div class='grid grid-cols-1 lg:grid-cols-3 gap-6'>
+          <div class='flex-1 border p-4 lg:p-6 h-full bg-[#d1edfc] rounded-xl'>
+            <div class='text-2xl lg:text-3xl h-[130px] font-semibold'>
+              Amélioration des Conditions de Vie
+            </div>
             <div>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error
-              aliquam distinctio excepturi,
+              Grâce à nos interventions, de nombreux enfants et familles
+              bénéficient d'un soutien qui améliore leurs conditions de vie et
+              leur sécurité. Plus de 1400 familles bénéficient de nos services
+              chaque année.
             </div>
           </div>
-          <div class='flex-1 border p-4 lg:p-6 h-auto'>
-            <div class='text-5xl lg:text-6xl h-[120px]'>2034</div>
+          <div class='flex-1 border p-4 lg:p-6 h-full bg-[#d1edfc] rounded-xl'>
+            <div class='text-2xl lg:text-3xl h-[130px] font-semibold'>
+              Renforcement des Capacités
+            </div>
             <div>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error
-              aliquam distinctio excepturi,
+              Les enfants et les familles acquièrent des compétences et des
+              ressources qui leur permettent de mieux faire face aux défis de la
+              vie quotidienne. Notamment avec des ateliers participatifs et des
+              formations spécifiques.
             </div>
           </div>
-          <div class='flex-1 border p-4 lg:p-6 h-auto'>
-            <div class='text-5xl lg:text-6xl h-[120px]'>320</div>
+          <div class='flex-1 border p-4 lg:p-6 h-full bg-[#d1edfc] rounded-xl'>
+            <div class='text-2xl lg:text-3xl h-[130px] font-semibold'>
+              Changement de Mentalités
+            </div>
             <div>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error
-              aliquam distinctio excepturi,
+              Nos actions de sensibilisation contribuent à changer les
+              perceptions et les attitudes de la communauté envers la protection
+              de l'enfance.
             </div>
           </div>
-          <div class='flex-1 border p-4 lg:p-6 h-auto'>
-            <div class='text-5xl lg:text-6xl h-[120px]'>05 villes</div>
+          <div class='flex-1 border p-4 lg:p-6 h-full bg-[#d1edfc] rounded-xl'>
+            <div class='text-2xl lg:text-3xl h-[130px] font-semibold'>
+              Création de Réseaux de Soutien
+            </div>
             <div>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error
-              aliquam distinctio excepturi,
+              Nous favorisons la création de réseaux de solidarité entre les
+              acteurs locaux, les familles et les enfants, renforçant ainsi le
+              tissu social.
+            </div>
+          </div>
+          <div class='flex-1 border p-4 lg:p-6 h-full bg-[#d1edfc] rounded-xl'>
+            <div class='text-2xl lg:text-3xl h-[130px] font-semibold'>
+              Mise en place de projets environnementaux
+            </div>
+            <div>
+              Nous encourageons des quartiers verts, inclusifs, durables et
+              responsables.
             </div>
           </div>
         </div>
@@ -94,9 +122,30 @@ import { Paragraphe_1 } from "../components/paragraphe";
       </div>
     </section>
 
-    <Diaporama image='/image_3.webp' />
+    <Diaporama image='/mon-quartier-propre.webp'>
+      <div class='px-5 lg:px-0 w-full lg:w-[50%] flex h-full items-end'>
+        <div class='py-5 lg:py-11'>
+          <div class='text-2xl text-white'>Mon Quartier Propre</div>
+          <div class='font-judson font-bold text-4xl lg:text-7xl text-white'>
+            Résidents Responsables ...Quartier Propre
+          </div>
+          <div>
+            <a
+              href='/a-propos/notre-equipe'
+              class='flex w-full items-center py-5 font-semibold text-xl gap-5 text-white hover:text-white'>
+              <div
+                class='w-[56px] aspect-square rounded-full flex items-center justify-center bg-yellow-400 text-orange-900'>
+                <RiArrowRightLine className='w-6 h-6' />
+              </div>
+              Notre Équipe
+            </a>
+          </div>
+        </div>
+      </div>
+    </Diaporama>
 
     <DonElement />
+    <ContactLine />
     <Footer />
   </body>
 </html>

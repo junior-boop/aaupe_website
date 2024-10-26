@@ -1,0 +1,1 @@
+import{j as s}from"./jsx-runtime.7faW4zRM.js";import"./index.DhYZZe0J.js";function a({children:t}){return s.jsx("section",{className:"py-[42px] lg:py-24 px-6 lg:px-0",children:s.jsx("div",{className:"max-w-[1280px] mx-auto",children:t})})}export{a as default};

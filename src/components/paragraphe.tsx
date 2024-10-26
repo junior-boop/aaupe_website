@@ -20,31 +20,10 @@ export function Paragraphe_1({ image, children, inverse = false }: paragraphe) {
     )
 }
 
-export function Paragraphe() {
+export function Paragraphe({ children }: { children: React.ReactNode }) {
     return (
-        <div className='w-full lg:w-[700px] px-6 lg:px-0 mx-auto'>
-            <div
-                className='text-3xl lg:text-5xl py-6 font-judson font-bold lg:text-center'>
-                Devenez un acteur du changement en soutenant notre association
-            </div>
-            <div className='mb-6 lg:text-center'>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas
-                pariatur voluptatem deserunt saepe tempora magni ipsam veniam deleniti
-                nulla atque error repellat odit, aut dicta optio. Dolorem corporis
-                molestiae nulla.
-            </div>
-            <div className='mb-6 lg:text-center'>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas
-                pariatur voluptatem deserunt saepe tempora magni ipsam veniam deleniti
-                nulla atque error repellat odit, aut dicta optio. Dolorem corporis
-                molestiae nulla.
-            </div>
-            <div className='mb-6 lg:text-center'>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas
-                pariatur voluptatem deserunt saepe tempora magni ipsam veniam deleniti
-                nulla atque error repellat odit, aut dicta optio. Dolorem corporis
-                molestiae nulla.
-            </div>
+        <div className='w-full lg:w-[700px] px-6 lg:px-0 mx-auto mt-16'>
+            {children}
         </div>
     )
 }

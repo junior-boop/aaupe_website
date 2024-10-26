@@ -1,0 +1,29 @@
+schema de l'application
+
+|--- aaupe.org.ma
+    |--- / A Propos
+        |--- / qui-nous-sommes (Qui nous sommes)
+        |--- / objectifs-principaux (Notre engagement)
+        |--- / notre-equipe (Notre Equipe)
+        |--- / nos-partenaires-engage (Nos Partenaires Engages)
+
+    |--- / Notre Objectif
+        |--- / notre-mission (Notre mission)
+        |--- / notre-vision (Notre Vision)
+        |--- / valuers-principes (Valeurs et Principes)
+        |--- / accompagner (Comment nous accompagner)
+
+    |--- / Recits
+        |--- / actualites (Actualites)
+        |--- / stories (Recits)
+
+    |--- / Impact
+    |--- / Contactez-nous 
+    |--- / programmes
+    |--- / evenements
+
+Pages dynamiques
+- Actualites
+- Recits
+- Programmes 
+- Evenements

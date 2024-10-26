@@ -6,10 +6,10 @@ export default function Entete_Principal() {
             <div className="lg:flex max-w-[1280px] mx-auto px-6 lg:px-0 py-32 lg:py-40">
                 <div className="flex-1 aspect-square lg:p-11 p-8 ">
                     <div className="font-judson text-[42px] lg:text-[48px] mb-8" style={{ lineHeight: 1 }}>
-                        +200 <br /> Enfants et familles
+                        +1000 <br /> Enfants et familles
                     </div>
                     <p style={{ lineHeight: 1.2 }}>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse ab dolores molestiae culpa, modi sed at unde et quod dolorum nisi cum quos error minima. Porro assumenda error nesciunt ipsa?..
+                        Grâce à nos interventions, de nombreux enfants et familles bénéficient d'un soutien qui améliore leurs conditions de vie et leur sécurité. Plus de 1400 familles bénéficient de nos services chaque année
                     </p>
                 </div>
                 <div className="flex-1 aspect-square lg:p-11 p-8">
@@ -21,7 +21,7 @@ export default function Entete_Principal() {
                         une association à but non lucratif, créée en 2007
                     </p>
                 </div>
-                <div className="flex-1 aspect-square bg-[#45AFDA] lg:p-11 p-8 flex justify-between flex-col">
+                <div className="flex-1 aspect-square bg-[#45AFDA] lg:p-11 p-8 flex justify-between flex-col rounded-xl">
                     <div className="font-judson font-bold text-[42px] lg:text-[48px]" style={{ lineHeight: 1 }}>
                         Notre <br /> Mission
                     </div>
@@ -42,7 +42,7 @@ export default function Entete_Principal() {
 
 
 interface Entete_page {
-    image: string,
+    image?: string,
     titre: string,
 }
 
@@ -63,6 +63,19 @@ export const Entete_page_2 = ({ image, titre }: Entete_page) => {
         <section className="bg-cover bg-no-repeat bg-[30%] relative h-[500px] lg:h-[700px]" style={{ backgroundImage: `url(${image})` }}>
             <div className="linear-black absolute top-0 left-0 w-full h-[500px] lg:h-[700px]"></div>
             <div className="max-w-[1280px] mx-auto relative flex items-end h-full px-6 lg:px-0 py-4 lg:py-12">
+                <div className="font-judson font-bold text-[48px] lg:text-[86px] text-white" style={{ lineHeight: 1 }}>
+                    {titre}
+                </div>
+            </div>
+        </section>
+    )
+}
+
+export const Entete_page_3 = ({ titre }: Entete_page) => {
+    return (
+        <section className="bg-cover bg-no-repeat bg-[30%] relative h-[150px] lg:h-[300px] bg-[#363554]">
+            <div className="linear-black absolute top-0 left-0 w-full h-[150px] lg:h-[300px]"></div>
+            <div className="max-w-[1280px] mx-auto relative flex items-end h-full px-6 lg:px-0 py-4 lg:py-9">
                 <div className="font-judson font-bold text-[48px] lg:text-[86px] text-white" style={{ lineHeight: 1 }}>
                     {titre}
                 </div>

@@ -55,6 +55,19 @@ body {
 	font-size: 20px;
 	line-height: 1.7;
 }
+
+header:hover .header {
+	@apply text-gray-800 ;
+} 
+header:hover .menu {
+	@apply text-gray-800 ;
+} 
+
+.bg-blur {
+	@apply bg-transparent;
+	backdrop-filter: blur(10px);
+}
+
 main {
 	width: 720px;
 	max-width: calc(100% - 2em);
@@ -258,3 +271,24 @@ hr {
 .paragraphe-1 + .paragraphe-1 {
  margin-bottom: 3.5rem;
 }
+
+.section-feedback {
+	background-image: linear-gradient(
+	  170deg,
+	  #199d57,
+	  rgba(26, 145, 123, 1)
+	);
+	@apply py-[92px] mt-[62px];
+  }
+
+.paralaxe-content {
+    position: relative;
+    height: 90vh;
+    padding: 2rem;
+	z-index: 10;
+    background-image: linear-gradient(
+      in oklab to top,
+      #0e0e0e 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }

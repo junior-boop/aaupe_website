@@ -1,0 +1,239 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import DonElement from "../../components/don";
+import { Entete_page } from "../../components/entete";
+import Footer from "../../components/Footer.astro";
+import Header from "../../components/header";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
+import Citation from "../../components/citattion";
+import {
+  Paragraphe,
+  Paragraphe_1,
+  Ilot,
+  Ilot_2,
+} from "../../components/paragraphe";
+import Diaporama from "../../components/diaporama";
+import Section from "../../components/section";
+import { RiArrowRightLine } from "../../components/icons";
+import Paralaxe from "../../components/Paralaxe.astro";
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <BaseHead
+      title={`Notre Mission | ${SITE_TITLE}`}
+      description={SITE_DESCRIPTION}
+    />
+    <style>
+      .section-1 {
+        @apply flex gap-9 flex-col lg:flex-row items-start;
+      }
+
+      .section_b {
+        @apply flex-1 flex-grow px-4 lg:px-9 py-4 lg:py-7 h-auto bg-[#F1FEFB] rounded-xl;
+      }
+    </style>
+  </head>
+  <body>
+    <Header client:load />
+    <div class='h-[72px] lg:h-[86px]'></div>
+    <Entete_page
+      client:load
+      image='/mission_header.webp'
+      titre='Notre Mission'
+    />
+    <Citation
+      client:load
+      citation="Il n'y a rien de plus important que de protéger nos enfants."
+      author='Barack Obama'
+    />
+
+    <Paragraphe_1 client:load image='/mission.webp'>
+      <div class='text-3xl lg:text-5xl py-6 font-judson font-bold'>
+        Notre mission, au-delà des mots
+      </div>
+      <div class='mb-6'>
+        L'association d'appui à l'unité de protection de l'enfance (AAUPE) à
+        Casablanca a pour mission de garantir la protection et la sauvegarde des
+        enfants et de leurs familles en situation de vulnérabilité.
+      </div>
+      <div class='mb-6'>
+        Nous œuvrons pour prévenir et lutter contre la maltraitance,
+        l'exploitation et l'abandon des enfants, en offrant des services adaptés
+        et en mobilisant les ressources nécessaires pour favoriser leur
+        bien-être et leur développement.
+      </div>
+      <div class='mb-6'>
+        Nous travaillons en étroite collaboration avec les acteurs sociaux, les
+        institutions publiques et les communautés pour créer un environnement
+        sûr et protecteur pour tous les enfants. Nous considérons que les droits
+        des enfants sont inaliénables.
+      </div>
+    </Paragraphe_1>
+    <Paragraphe client:load>
+      <div class='mb-6 text-center text-xl lg:text-3xl font-semibold'>
+        L'AAUPE de Casablanca ne se contente pas de déclarer son engagement
+        envers les enfants vulnérables. Nos actions concrètes témoignent de
+        notre volonté de faire de cet engagement une réalité au quotidien :
+      </div>
+    </Paragraphe>
+
+    <Section client:load>
+      <div class='flex flex-col lg:flex-row flex-grow gap-6'>
+        <div class='section_b'>
+          <div class='text-3xl lg:text-4xl pb-6 font-judson font-bold'>
+            Prévention
+          </div>
+          <div class='mb-6'>
+            <ul>
+              <li>
+                <b>Sensibilisation :</b> Nous menons des campagnes de sensibilisation
+                auprès du grand public, des professionnels de l'enfance et des familles
+                pour identifier les signes de maltraitance et savoir comment réagir.
+              </li>
+              <li>
+                <b>Formation :</b> Nous organisons des formations à destination des
+                parents, des enseignants et des acteurs de la petite enfance pour
+                leur donner les outils nécessaires pour prévenir les risques.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class='section_b'>
+          <div class='text-3xl lg:text-4xl pb-6 font-judson font-bold'>
+            Protection
+          </div>
+          <div class='mb-6'>
+            <ul>
+              <li>
+                <b>Accueil et écoute :</b> Nous accueillons les enfants et leurs
+                familles en situation de difficulté, leur offrant un espace d'écoute
+                et de soutien psychologique.
+              </li>
+              <li>
+                <b>Accompagnement :</b> Nous accompagnons les familles dans la résolution
+                de leurs problèmes et les aidons à mettre en place des mesures de
+                protection pour leurs enfants.
+              </li>
+              <li>
+                <b>Plaintes et signalements :</b> Nous recevons et traitons les plaintes
+                et les signalements de maltraitance, en étroite collaboration avec
+                les autorités compétentes.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class='section_b'>
+          <div class='text-3xl lg:text-4xl pb-6 font-judson font-bold'>
+            Réinsertion
+          </div>
+          <div class='mb-6'>
+            <ul>
+              <li>
+                <b>Placement familial:</b> Nous proposons des solutions de placement
+                familial pour les enfants qui ne peuvent plus rester dans leur famille
+                d'origine.
+              </li>
+              <li>
+                <b>Scolarisation :</b> Nous soutenons la scolarisation des enfants
+                et leur proposons des activités éducatives et culturelles.
+              </li>
+              <li>
+                <b>Insertion sociale :</b> Nous accompagnons les jeunes vers l'autonomie
+                et l'insertion sociale.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </Section>
+
+    <Paralaxe image='/aaupe_1.webp'>
+      <div
+        class='max-w-[1280px] mx-auto h-full flex flex-col justify-end py-[32px] lg:py-[62px] text-white'>
+        <div class='px-5 lg:px-0 w-full lg:w-[50%] flex h-full items-end'>
+          <div class='py-5 lg:py-11'>
+            <div class='font-judson font-bold text-4xl lg:text-7xl text-white'>
+              Faites connaissance avec toute notre equipe
+            </div>
+            <div>
+              <a
+                href='/a-propos/notre-equipe'
+                class='flex w-full items-center py-5 font-semibold text-xl gap-5 text-white hover:text-white'>
+                <div
+                  class='w-[56px] aspect-square rounded-full flex items-center justify-center bg-yellow-400 text-orange-900'>
+                  <RiArrowRightLine className='w-6 h-6' />
+                </div>
+                Notre Équipe
+              </a>
+            </div>
+          </div>
+      </div>
+      
+      </div>
+    </Paralaxe>
+    <!-- <Section client:load>
+      <div class='section-1'>
+        <div class='flex-1'>
+          <div class='text-3xl lg:text-5xl py-6 font-judson font-bold'>
+            Devenez un acteur du changement en soutenant notre association
+          </div>
+          <div class='mb-6'>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas
+            pariatur voluptatem deserunt saepe tempora magni ipsam veniam
+            deleniti nulla atque error repellat odit, aut dicta optio. Dolorem
+            corporis molestiae nulla.
+          </div>
+          <div class='mb-6'>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas
+            pariatur voluptatem deserunt saepe tempora magni ipsam veniam
+            deleniti nulla atque error repellat odit, aut dicta optio. Dolorem
+            corporis molestiae nulla.
+          </div>
+          <div class='mb-6'>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas
+            pariatur voluptatem deserunt saepe tempora magni ipsam veniam
+            deleniti nulla atque error repellat odit, aut dicta optio. Dolorem
+            corporis molestiae nulla.
+          </div>
+          <div class='mb-6'>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas
+            pariatur voluptatem deserunt saepe tempora magni ipsam veniam
+            deleniti nulla atque error repellat odit, aut dicta optio. Dolorem
+            corporis molestiae nulla.
+          </div>
+          <div class='mb-6'>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas
+            pariatur voluptatem deserunt saepe tempora magni ipsam veniam
+            deleniti nulla atque error repellat odit, aut dicta optio. Dolorem
+            corporis molestiae nulla.
+          </div>
+          <div class='mb-6'>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas
+            pariatur voluptatem deserunt saepe tempora magni ipsam veniam
+            deleniti nulla atque error repellat odit, aut dicta optio. Dolorem
+            corporis molestiae nulla.
+          </div>
+        </div>
+        <Ilot client:load>
+          <div class='text-2xl lg:text-3xl pb-6 font-judson font-bold'>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+            doloribus fugiat corporis.
+          </div>
+          <div>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas
+            pariatur voluptatem deserunt saepe tempora magni ipsam veniam
+            deleniti nulla atque error repellat odit, aut dicta optio. Dolorem
+            corporis molestiae nulla.
+          </div>
+        </Ilot>
+      </div>
+    </Section>
+    <Section>
+      <Ilot_2 />
+    </Section> -->
+    <DonElement />
+    <Footer />
+  </body>
+</html>

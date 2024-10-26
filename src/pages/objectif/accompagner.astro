@@ -1,0 +1,241 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import DonElement from "../../components/don";
+import { Entete_page } from "../../components/entete";
+import Footer from "../../components/Footer.astro";
+import Header from "../../components/header";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
+import Citation from "../../components/citattion";
+import Diaporama from "../../components/diaporama";
+import Section from "../../components/section";
+import { RiArrowRightLine, RiArrowRightUpLine } from "../../components/icons";
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <BaseHead
+      title={`Nous Accompagner | ${SITE_TITLE}`}
+      description={SITE_DESCRIPTION}
+    />
+    <style>
+      .section-1 {
+        @apply flex gap-9 flex-col lg:flex-row items-start;
+      }
+
+      .section_b {
+        @apply flex flex-col lg:flex-row flex-1 flex-grow px-4 lg:px-9 py-4 lg:py-9 h-auto bg-[#116d57] items-start text-white gap-6 rounded-xl;
+
+        .image {
+          @apply w-full lg:w-[400px] aspect-video bg-slate-400 rounded-lg;
+        }
+
+        &:hover .fleche {
+          @apply top-[-2px];
+        }
+      }
+
+      .title {
+        @apply font-judson font-bold text-5xl pb-11 lg:w-[50%];
+      }
+    </style>
+  </head>
+  <body>
+    <Header client:load />
+    <div class='h-[72px] lg:h-[86px]'></div>
+    <Entete_page
+      client:load
+      image='/mission_header.webp'
+      titre='Nous Accompagner'
+    />
+
+    <Section client:load>
+      <div class='title'>Comment vous pouvez Nous Accompagner !</div>
+      <div class='flex flex-col flex-grow gap-6'>
+        <a href='/benevolat' class='section_b'>
+          <div class='flex-1'>
+            <div
+              class='flex items-center gap-4 text-3xl lg:text-4xl pb-6 font-judson font-bold'>
+              Bénévolat
+              <div class='fleche relative top-1 duration-300 ease-in-out'>
+                <RiArrowRightUpLine className='w-9 h-9' />
+              </div>
+            </div>
+            <div class='mb-6'>
+              Rejoindre notre équipe en tant que bénévole pour participer à nos
+              activités, ateliers et événements de sensibilisation
+            </div>
+          </div>
+          <div class='image'></div>
+        </a>
+        <a href='/benevolat' class='section_b'>
+          <div class='flex-1'>
+            <div
+              class='flex items-center gap-4 text-3xl lg:text-4xl pb-6 font-judson font-bold'>
+              Dons et Parrainage
+              <div class='fleche relative top-1 duration-300 ease-in-out'>
+                <RiArrowRightUpLine className='w-9 h-9' />
+              </div>
+            </div>
+            <div class='mb-6'>
+              Faire un don financier ou matériel pour soutenir nos programmes et
+              initiatives. Chaque contribution, quelle qu'elle soit, a un impact
+              significatif.
+            </div>
+          </div>
+          <div class='image'></div>
+        </a>
+        <a class='section_b'>
+          <div class='flex-1'>
+            <div
+              class='flex items-center gap-4 text-3xl lg:text-4xl pb-6 font-judson font-bold'>
+              Sensibilisation
+              <!-- <div class='fleche relative top-1 duration-300 ease-in-out'>
+                <RiArrowRightUpLine className='w-9 h-9' />
+              </div> -->
+            </div>
+            <div class='mb-6'>
+              Partager notre mission et nos activités avec votre réseau pour
+              sensibiliser davantage de personnes à la protection de l'enfance
+            </div>
+          </div>
+          <div class='image'></div>
+        </a>
+        <a href='/benevolat' class='section_b'>
+          <div class='flex-1'>
+            <div
+              class='flex items-center gap-4 text-3xl lg:text-4xl pb-6 font-judson font-bold'>
+              Partenariats
+              <div class='fleche relative top-1 duration-300 ease-in-out'>
+                <RiArrowRightUpLine className='w-9 h-9' />
+              </div>
+            </div>
+            <div class='mb-6'>
+              Collaborer avec nous en tant qu'entreprise, institution ou
+              organisation pour développer des projets communs en faveur de la
+              protection de l'enfance.
+            </div>
+          </div>
+          <div class='image'></div>
+        </a>
+        <a class='section_b'>
+          <div class='flex-1'>
+            <div
+              class='flex items-center gap-4 text-3xl lg:text-4xl pb-6 font-judson font-bold'>
+              Formation et Expertise
+              <!-- <div class='fleche relative top-1 duration-300 ease-in-out'>
+                <RiArrowRightUpLine className='w-9 h-9' />
+              </div> -->
+            </div>
+            <div class='mb-6'>
+              Offrir vos compétences et votre expertise pour former notre équipe
+              ou contribuer à nos programmes éducatifs.
+            </div>
+          </div>
+          <div class='image'></div>
+        </a>
+        <a href='/benevolat' class='section_b'>
+          <div class='flex-1'>
+            <div
+              class='flex items-center gap-4 text-3xl lg:text-4xl pb-6 font-judson font-bold'>
+              Parrainage
+              <div class='fleche relative top-1 duration-300 ease-in-out'>
+                <RiArrowRightUpLine className='w-9 h-9' />
+              </div>
+            </div>
+            <div class='mb-6'>
+              Le parrainage permet l’amélioration des vies des enfants en
+              situation de vulnérabilité. Vous pouvez parrainez un enfant et
+              suivre son évolution scolaire et sociale. Vous pouvez etre un
+              acteur de changement, chaque don compte.
+            </div>
+          </div>
+          <div class='image'></div>
+        </a>
+      </div>
+    </Section>
+
+    <Diaporama client:load image='/aaupe_1.webp'>
+      <div class='px-5 lg:px-0 w-full lg:w-[50%] flex h-full items-end'>
+        <div class='py-5 lg:py-11'>
+          <div class='font-judson font-bold text-4xl lg:text-7xl text-white'>
+            Faites connaissance avec toute notre equipe
+          </div>
+          <div>
+            <a
+              href='/a-propos/notre-equipe'
+              class='flex w-full items-center py-5 font-semibold text-xl gap-5 text-white hover:text-white'>
+              <div
+                class='w-[56px] aspect-square rounded-full flex items-center justify-center bg-yellow-400 text-orange-900'>
+                <RiArrowRightLine className='w-6 h-6' />
+              </div>
+              Notre Équipe
+            </a>
+          </div>
+        </div>
+      </div>
+    </Diaporama>
+    <!-- <Section client:load>
+      <div class='section-1'>
+        <div class='flex-1'>
+          <div class='text-3xl lg:text-5xl py-6 font-judson font-bold'>
+            Devenez un acteur du changement en soutenant notre association
+          </div>
+          <div class='mb-6'>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas
+            pariatur voluptatem deserunt saepe tempora magni ipsam veniam
+            deleniti nulla atque error repellat odit, aut dicta optio. Dolorem
+            corporis molestiae nulla.
+          </div>
+          <div class='mb-6'>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas
+            pariatur voluptatem deserunt saepe tempora magni ipsam veniam
+            deleniti nulla atque error repellat odit, aut dicta optio. Dolorem
+            corporis molestiae nulla.
+          </div>
+          <div class='mb-6'>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas
+            pariatur voluptatem deserunt saepe tempora magni ipsam veniam
+            deleniti nulla atque error repellat odit, aut dicta optio. Dolorem
+            corporis molestiae nulla.
+          </div>
+          <div class='mb-6'>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas
+            pariatur voluptatem deserunt saepe tempora magni ipsam veniam
+            deleniti nulla atque error repellat odit, aut dicta optio. Dolorem
+            corporis molestiae nulla.
+          </div>
+          <div class='mb-6'>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas
+            pariatur voluptatem deserunt saepe tempora magni ipsam veniam
+            deleniti nulla atque error repellat odit, aut dicta optio. Dolorem
+            corporis molestiae nulla.
+          </div>
+          <div class='mb-6'>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas
+            pariatur voluptatem deserunt saepe tempora magni ipsam veniam
+            deleniti nulla atque error repellat odit, aut dicta optio. Dolorem
+            corporis molestiae nulla.
+          </div>
+        </div>
+        <Ilot client:load>
+          <div class='text-2xl lg:text-3xl pb-6 font-judson font-bold'>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+            doloribus fugiat corporis.
+          </div>
+          <div>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas
+            pariatur voluptatem deserunt saepe tempora magni ipsam veniam
+            deleniti nulla atque error repellat odit, aut dicta optio. Dolorem
+            corporis molestiae nulla.
+          </div>
+        </Ilot>
+      </div>
+    </Section>
+    <Section>
+      <Ilot_2 />
+    </Section> -->
+    <DonElement />
+    <Footer />
+  </body>
+</html>

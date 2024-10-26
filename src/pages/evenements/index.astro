@@ -1,0 +1,21 @@
+---
+import Articles_Content from "../../components/actualites/articles";
+import BaseHead from "../../components/BaseHead.astro";
+import DonElement from "../../components/don";
+import EvenementPage from "../../components/evenement/page";
+import Footer from "../../components/Footer.astro";
+import Header from "../../components/header";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header client:load />
+    <EvenementPage client:load client:load />
+    <Footer />
+  </body>
+</html>

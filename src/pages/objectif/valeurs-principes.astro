@@ -1,0 +1,135 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import DonElement from "../../components/don";
+import { Entete_page } from "../../components/entete";
+import Footer from "../../components/Footer.astro";
+import Header from "../../components/header";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
+import Element_UPE from "../../components/element_upe";
+import Recits from "../../components/recits";
+import Diaporama from "../../components/diaporama";
+import Section from "../../components/section";
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <BaseHead
+      title={`Valeurs et Principes | ${SITE_TITLE}`}
+      description={SITE_DESCRIPTION}
+    />
+    <style>
+      .section-1 {
+        @apply flex gap-9 flex-col lg:flex-row items-start;
+      }
+
+      .section_b {
+        @apply flex-1 flex-grow px-4 lg:px-9 py-4 lg:py-7 h-auto bg-[#F1FEFB];
+      }
+
+      .image {
+        filter: hue-rotate(90deg) saturate(150%) brightness(0.8);
+      }
+    </style>
+  </head>
+  <body>
+    <Header client:load />
+    <div class='h-[72px] lg:h-[86px]'></div>
+    <Entete_page
+      client:load
+      image='/principal-valeurs.webp'
+      titre='Valeurs et principes'
+    />
+    <!-- <Citation
+      client:load
+      citation="Placer les besoins et les droits de l'enfant au cœur de toutes nos décisions."
+      author=''
+    /> -->
+    <!-- 
+    <Diaporama image='/image_3.webp' /> -->
+    <Section client:load>
+      <div class='grid lg:grid-cols-3 gap-6 lg:gap-10'>
+        <Element_UPE
+          client:load
+          titre=`Respect des Droits de l'Enfant`
+          descript=`Nous croyons fermement en la dignité et aux droits inaliénables de
+              chaque enfant, tels qu'énoncés dans la Convention relative aux
+              droits de l'enfant.`
+          `>
+          <div class='w-[40%]'>
+            <img src='/droits_enfants.png' class='image' />
+          </div>
+        </Element_UPE>
+        <Element_UPE
+          client:load
+          titre=`Solidarité`
+          descript=`Nous cultivons un esprit de solidarité envers les enfants et les
+              familles en difficulté, en favorisant l'entraide et le soutien
+              mutuel.`>
+          <div class='w-[40%]'>
+            <img src='/coeur.png' />
+          </div>
+        </Element_UPE>
+        <Element_UPE
+          client:load
+          titre=`Écoute et Empathie`
+          descript=`Nous nous engageons à écouter les besoins et les préoccupations
+              des enfants et de leurs familles, en faisant preuve d'empathie et
+              de compréhension.`>
+          <div class='w-[40%]'>
+            <img src='/oreille.png' />
+          </div>
+        </Element_UPE>
+        <Element_UPE
+          client:load
+          titre=`Collaboration`
+          descript=`Nous travaillons en partenariat avec les acteurs locaux, les
+              institutions et les communautés pour maximiser notre impact et
+              garantir une approche intégrée de la protection de l'enfance.`>
+          <div class='w-[40%]'>
+            <img src='/collaboration.png' />
+          </div>
+        </Element_UPE>
+        <Element_UPE
+          client:load
+          titre=`Transparence et Intégrité`
+          descript=`Nous agissons avec transparence et intégrité dans toutes nos
+              actions, en rendant compte de nos activités et en respectant les
+              normes éthiques les plus élevées.`>
+          <div class='w-[40%]'>
+            <img src='/integrite.png' />
+          </div>
+        </Element_UPE>
+        <Element_UPE
+          client:load
+          titre=`Innovation et Adaptabilité`
+          descript=`Nous sommes ouverts à l'innovation et à l'adaptation de nos
+              méthodes pour répondre efficacement aux besoins changeants des
+              enfants et des familles que nous servons.`>
+          <div class='w-[40%]'>
+            <img src='/innovation.png' />
+          </div>
+        </Element_UPE>
+        <Element_UPE
+          client:load
+          titre=`Engagement à Long Terme`
+          descript=`Nous nous engageons à travailler sur le long terme pour assurer un
+              changement durable et significatif dans la vie des enfants et des
+              familles vulnérables.`>
+          <div class='w-[40%]'>
+            <img src='/poignee-de-main.png' />
+          </div>
+        </Element_UPE>
+      </div>
+
+      <!-- <Section>
+      <Ilot_2 />
+      </Section> -->
+    </Section>
+    <Recits client:load />
+    <DonElement />
+    <Footer />
+  </body>
+</html>
+
+<!-- Ces valeurs et principes guident notre action quotidienne et nous motivent à poursuivre notre mission avec passion et détermination. -->

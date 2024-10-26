@@ -1,0 +1,60 @@
+---
+import { client } from "./graphql";
+import { RiArrowRightLine } from "./icons";
+import Paralaxe from "./Paralaxe.astro";
+import { gql } from "graphql-request";
+
+interface Data {
+  articles: {
+    title: string;
+    titleSlug: string;
+    picture: {
+      url: string;
+    };
+  }[];
+}
+
+async function getData() {
+  const query = gql/* GraphQL */ `
+    query MyQuery {
+      articles(stage: PUBLISHED, first: 10) {
+        title
+        titleSlug
+        picture {
+          url
+        }
+      }
+    }
+  `;
+
+  const { articles } = (await client.request(query)) as Data;
+  return articles[0];
+}
+
+const { picture, title, titleSlug } = await getData();
+---
+
+<Paralaxe image={picture.url}>
+  <div
+    class='max-w-[1280px] mx-auto h-full flex flex-col justify-end py-[32px] lg:py-[62px] text-white'>
+    <div class='px-5 lg:px-0 w-full lg:w-[50%] flex h-full items-end'>
+      <div class='py-5 lg:py-11'>
+        <div>La dernière activité de l'association</div>
+        <div class='font-judson font-bold text-4xl lg:text-7xl text-white'>
+          {title}
+        </div>
+        <div>
+          <a
+            href=`/actualites/articles?slug=${titleSlug}`
+            class='flex w-full items-center py-5 font-semibold text-xl gap-5 text-white hover:text-white'>
+            <div
+              class='w-[56px] aspect-square rounded-full flex items-center justify-center bg-yellow-400 text-orange-900'>
+              <RiArrowRightLine className='w-6 h-6' />
+            </div>
+            Lire plus
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</Paralaxe>

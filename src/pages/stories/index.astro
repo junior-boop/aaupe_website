@@ -1,0 +1,30 @@
+---
+import BanniereState from "../../components/Banniere_state.astro";
+import BaseHead from "../../components/BaseHead.astro";
+import DonElement from "../../components/don";
+import Footer from "../../components/Footer.astro";
+import Header from "../../components/header";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+
+import { gql } from 'graphql-request'
+import { client } from "../../components/graphql";
+import type { doc_Query, Story } from "../../components/graphql-type";
+import { Entete_page_3 } from "../../components/entete";
+import StoriesPage from "../../components/stories/page";
+
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header client:load />
+    <div class='h-[72px] lg:h-[86px]'></div>
+    <BanniereState />
+    <StoriesPage client:load  />
+    <DonElement />
+    <Footer />
+  </body>
+</html>

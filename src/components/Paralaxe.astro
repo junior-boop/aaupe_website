@@ -1,5 +1,11 @@
 ---
 import { RiArrowRightLine } from "./icons";
+
+interface Props {
+  image: string;
+}
+
+const { image } = Astro.props as Props;
 ---
 
 <style>
@@ -10,13 +16,12 @@ import { RiArrowRightLine } from "./icons";
     background-color: black;
   }
   .parallax-bg {
-    background-image: url("/benevolat.jpg");
     background-size: cover;
     background-position: center;
-    height: 120%;
+    height: 150%;
     width: 100%;
     position: absolute;
-    top: 0;
+    top: -50%;
     left: 0;
   }
   .content {
@@ -49,36 +54,9 @@ import { RiArrowRightLine } from "./icons";
   }
 </style>
 <div class='parallax-container'>
-  <div class='parallax-bg'></div>
+  <div class='parallax-bg' style=`background-image: url(${image});`></div>
   <div class='content'>
-    <div
-      class='max-w-[1280px] mx-auto h-full flex flex-col justify-end py-[32px] lg:py-[62px] text-white'>
-      <div
-        class='font-judson text-4xl lg:text-[72px] font-bold lg:w-[50%] mb-7'
-        style='line-height: 1;'>
-        Devenir Bénévole
-      </div>
-      <div class='lg:w-[50%] mb-4 line_height'>
-        Que vous soyez disponible ponctuellement ou régulièrement, que vous ayez
-        des compétences spécifiques ou simplement l'envie de vous impliquer,
-        nous avons besoin de vous !
-      </div>
-      <a
-        href='/objectif/benevole'
-        class='text-black hover:text-black flex items-center gap-4 pl-4 pr-6 py-3 rounded-full bg-white w-fit'>
-        <svg
-          xmlns='http://www.w3.org/2000/svg'
-          width='32'
-          height='32'
-          viewBox='0 0 24 24'
-          ><path
-            fill='currentColor'
-            d='m16.004 9.414l-8.607 8.607l-1.414-1.414L14.59 8H7.003V6h11v11h-2z'
-          ></path></svg
-        >
-        Suivre le lien
-      </a>
-    </div>
+    <slot />
     <!-- Add more paragraphs here to create scrollable content -->
   </div>
 </div>
@@ -97,12 +75,12 @@ import { RiArrowRightLine } from "./icons";
 
   //@ts-ignore
   gsap.to(".parallax-bg", {
-    yPercent: -30,
+    yPercent: 40,
     ease: "none",
     scrollTrigger: {
       trigger: ".parallax-container",
       start: "top bottom",
-      end: "bottom top",
+      end: "bottom top ",
       scrub: true,
     },
   });

@@ -1,0 +1,40 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import DonElement from "../components/don";
+import { Entete_page_2 } from "../components/entete";
+import Footer from "../components/Footer.astro";
+import Header from "../components/header";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import BanniereState from "../components/Banniere_state.astro";
+import Diaporama from "../components/diaporama";
+import ActionProps from "../components/action-produit";
+import Feedback from "../components/feedback";
+import ContactLine from "../components/ContactLine.astro";
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      body {
+        scroll-behavior: smooth;
+      }
+    </style></head
+  >
+
+  <body>
+    <Header client:load />
+    <div class='h-[72px] lg:h-[86px]'></div>
+    <BanniereState />
+    <Entete_page_2 client:load image='/contacter.jpg' titre=`Contactez-nous` />
+
+    <ActionProps client:load />
+
+    <Feedback client:load />
+
+    <DonElement />
+    <ContactLine />
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,24 @@
+---
+import BanniereState from "../../components/Banniere_state.astro";
+import BaseHead from "../../components/BaseHead.astro";
+import DonElement from "../../components/don";
+import Footer from "../../components/Footer.astro";
+import Header from "../../components/header";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+
+import Actualites from '../../components/actualites/page'
+import DonPage from "../../components/don/page";
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header client:load />
+    <div class='h-[72px] lg:h-[86px]'></div>
+    <DonPage client:load />
+    <Footer />
+  </body>
+</html>

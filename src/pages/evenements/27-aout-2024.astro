@@ -1,0 +1,149 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import DonElement from "../../components/don";
+import Footer from "../../components/Footer.astro";
+import Header from "../../components/header";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
+
+import { RiArrowRightLine } from "../../components/icons";
+
+import Diaporama from "../../components/diaporama";
+import Section from "../../components/section";
+import Paralaxe from "../../components/Paralaxe.astro";
+
+const data: {
+  src: string;
+}[] = [
+  { src: "/afd.png" },
+  { src: "/tcse.png" },
+  { src: "/samim.png" },
+  { src: "/jyif.png" },
+  { src: "/ecodev.png" },
+  { src: "/pulse.png" },
+  { src: "/lab.png" },
+  { src: "/bidaya.png" },
+];
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <BaseHead
+      title={`Journée de sensibilisation du 27 Aout 2024 | ${SITE_TITLE}`}
+      description={`Promouvoir des caractéristiques civilisationnelles durables et complètes
+            à nos quartiers, les résidents bénéficieront d’un environnement sain
+            et participeront énergétiquement et activement à la vie communautaire.`}
+      image='/27-aout.webp'
+    />
+    <style>
+      .section-1 {
+        @apply flex gap-9 flex-col lg:flex-row items-start;
+      }
+
+      .section_b {
+        @apply flex-1 flex-grow px-4 lg:px-9 py-4 lg:py-7 h-auto bg-[#F1FEFB];
+      }
+
+      .banniere-mon-quartier {
+        background-image: linear-gradient(170deg, #199d57, #1a917b);
+        @apply relative h-[50vh] w-full flex items-center justify-center overflow-hidden;
+
+        .content {
+          @apply w-full lg:w-[600px] flex flex-col items-center mx-auto;
+        }
+        .element_1 {
+          @apply w-[70%] relative mb-8;
+        }
+
+        .element_2 {
+          @apply w-[50%] relative;
+        }
+
+        .title {
+          @apply text-center font-inder text-3xl lg:text-5xl font-bold text-white;
+        }
+
+        .right {
+          @apply absolute bottom-[-30px] lg:top-[100px] lg:right-[0px] w-[350px] lg:w-[400px];
+        }
+
+        .left {
+          @apply w-[300px] lg:w-auto absolute top-[-100px] lg:top-[-200px] left-[-150px] lg:left-[-250px];
+        }
+      }
+      .section_2 {
+        @apply mt-[3rem] lg:mt-[8rem] flex flex-col lg:flex-row lg:items-start gap-9;
+      }
+      .section {
+        background-image: linear-gradient(
+          170deg,
+          #199d57,
+          rgba(26, 145, 123, 1)
+        );
+        @apply py-[92px] mt-[62px];
+      }
+      .section_3 {
+        @apply flex flex-col-reverse lg:flex-row-reverse lg:items-end gap-9 max-w-[1280px] w-full mx-auto px-6 lg:px-0;
+      }
+
+      .grid-partenaire {
+        @apply grid grid-cols-2 lg:grid-cols-5 gap-3 lg:gap-6;
+      }
+
+      .partenaire_parent {
+        @apply flex items-center aspect-square justify-center bg-slate-100 rounded-xl;
+      }
+      .partenaire {
+        @apply w-[70%] aspect-square flex items-center justify-center;
+      }
+    </style>
+  </head>
+  <body>
+    <Header client:load />
+    <div class='h-[72px] lg:h-[86px]'></div>
+    <div class='banniere-mon-quartier'>
+      <div class='content'>
+        <div class='element_1'>
+          <img src='/element_1.webp' alt='' />
+        </div>
+      </div>
+    </div>
+    <div class='max-w-[720px] w-full px-6 lg:px-0 mx-auto my-14 lg:my-24'>
+      <div class='text-4xl lg:text-6xl font-judson font-bold text-center mb-3'>
+        Journée de sensibilisation
+      </div>
+      <div class='font-inter text-2xl lg:text-3xl text-center mb-3'>
+        Pour les enfants du camp urbain de Lalla Meryem
+      </div>
+      <div class='bg-slate-100 px-4 lg:px-6 py-3 lg:py-6 rounded-xl mb-9'>
+        <div>Date : <b>Mardi 27 août</b></div>
+        <div>heure : <b>De 10h00 du matin à 16h00</b></div>
+      </div>
+      <div class='mt-6'>
+        <img
+          src='/27-aout.webp'
+          alt='programme de la sensibilisation du 27 aout 2024 en Arabe'
+        />
+      </div>
+    </div>
+
+    <Section client:load>
+      <div class='font-judson text-3xl lg:text-5xl font-bold mb-5'>
+        Partenaires
+      </div>
+      <div class='grid-partenaire'>
+        {
+          data.map((el, key) => (
+            <div class='partenaire_parent'>
+              <div class='partenaire'>
+                <img src={el.src} alt='' width='100%' height='100%' />
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </Section>
+
+    <Footer />
+  </body>
+</html>

@@ -7,6 +7,8 @@ import Header from "../../components/header";
 import { SITE_TITLE } from "../../consts";
 
 import Member from "../../components/membre";
+import MembresPage from "../../components/equipe/page";
+import BanniereState from "../../components/Banniere_state.astro";
 ---
 
 <!doctype html>
@@ -41,22 +43,10 @@ import Member from "../../components/membre";
   <body>
     <Header client:load />
     <div class='h-[72px] lg:h-[86px]'></div>
-    <Entete_page client:load image='/header.webp' titre='Notre équipe' />
+    <BanniereState />
+    <Entete_page client:load image='/image_1.webp' titre='Notre équipe' />
     <div class='h-[72px] lg:h-[86px]'></div>
-    <div class='max-w-[1280px] mx-auto'>
-      <div class='member'>
-        <Member
-          image='/header.webp'
-          name='John Doe'
-          role='secretaire general'
-        />
-        <Member
-          image='/header.webp'
-          name='John Doe'
-          role='secretaire general'
-        />
-      </div>
-    </div>
+    <MembresPage client:load />
     <DonElement />
     <Footer />
   </body>

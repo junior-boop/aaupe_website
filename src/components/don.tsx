@@ -4,7 +4,7 @@ export default function DonElement() {
     return (
         <section className="py-12 lg:py-32">
             <div className="max-w-[1280px] mx-auto lg:flex items-start gap-6 px-6 lg:px-0">
-                <div className="w-full lg:w-[50%] aspect-square bg-slate-300 bg-center bg-no-repeat bg-cover" style={{ backgroundImage: "url('/story.webp')" }}></div>
+                <div className="w-full lg:w-[50%] aspect-square bg-slate-300 bg-center bg-no-repeat bg-cover" style={{ backgroundImage: "url('/soutenir.jpg')" }}></div>
                 <div className="flex-1">
                     <div className="text-3xl lg:text-5xl lg:px-6 py-6 font-judson font-bold ">
                         Devenez un acteur du changement en soutenant notre association
@@ -14,17 +14,17 @@ export default function DonElement() {
                     </div>
                     <form action="">
                         <div className="lg:px-6 flex  lg:items-center gap-4 flex-col lg:flex-row mb-4 flex-wrap">
-                            <Radio name="don" value="200" label="200dhm" />
-                            <Radio name="don" value="400" label="400dhm" />
-                            <Radio name="don" value="600" label="600dhm" />
-                            <Radio name="don" value="1000" label="1000dhm" />
+                            <Radio name="don" value="100" label="100MAD" />
+                            <Radio name="don" value="250" label="250MAD" />
+                            <Radio name="don" value="500" label="500MAD" />
+                            <Radio name="don" value="1000" label="1000MAD" />
 
                         </div>
                         <div className="lg:px-6 mb-4">
                             <input type="text" name="don" className="border w-full px-4 py-2 text-lg rounded-full" placeholder="Ou entré un autre montant" />
                         </div>
                         <div className="lg:px-6">
-                            <button className="px-6 py-2 bg-yellow-400 text-orange-900 font-bold rounded-full flex items-center gap-4">Soumettre <RiArrowRightLine className="h-6 w-6" /></button>
+                            <a href="/don" className="px-6 py-2 bg-yellow-400 text-orange-900 font-bold rounded-full flex items-center gap-4 w-fit">Soumettre <RiArrowRightLine className="h-6 w-6" /></a>
                         </div>
                     </form>
                 </div>

@@ -6,7 +6,7 @@ interface Element_UPE {
 
 export default function Element_UPE({ titre, descript, children }: Element_UPE) {
     return (
-        <div className='bg-[#F1FEFB] lg:aspect-square px-6 py-6 lg:px-9 lg:py-9'>
+        <div className='bg-[#F1FEFB] px-6 py-6 lg:px-9 lg:py-9 h-full'>
             <div className="mb-4">
                 {children}
             </div>

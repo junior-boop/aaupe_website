@@ -1,0 +1,234 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import DonElement from "../../components/don";
+import Footer from "../../components/Footer.astro";
+import Header from "../../components/header";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
+
+import { RiArrowRightLine } from "../../components/icons";
+
+import Diaporama from "../../components/diaporama";
+import Section from "../../components/section";
+import Paralaxe from "../../components/Paralaxe.astro";
+
+const data: {
+  src: string;
+}[] = [
+  { src: "/afd.png" },
+  { src: "/tcse.png" },
+  { src: "/samim.png" },
+  { src: "/jyif.png" },
+  { src: "/ecodev.png" },
+  { src: "/pulse.png" },
+  { src: "/lab.png" },
+  { src: "/bidaya.png" },
+];
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <BaseHead
+      title={`Mon Quartier Propre | ${SITE_TITLE}`}
+      description={`Promouvoir des caractéristiques civilisationnelles durables et complètes
+            à nos quartiers, les résidents bénéficieront d’un environnement sain
+            et participeront énergétiquement et activement à la vie communautaire.`}
+      image='/mon-quartier-propre.webp'
+    />
+    <style>
+      .section-1 {
+        @apply flex gap-9 flex-col lg:flex-row items-start;
+      }
+
+      .section_b {
+        @apply flex-1 flex-grow px-4 lg:px-9 py-4 lg:py-7 h-auto bg-[#F1FEFB];
+      }
+
+      .banniere-mon-quartier {
+        background-image: linear-gradient(170deg, #199d57, #1a917b);
+        @apply relative h-[100vh] w-full flex items-center justify-center overflow-hidden;
+
+        .content {
+          @apply w-full lg:w-[600px] flex flex-col items-center mx-auto;
+        }
+        .element_1 {
+          @apply w-[70%] relative mb-8;
+        }
+
+        .element_2 {
+          @apply w-[50%] relative;
+        }
+
+        .title {
+          @apply text-center font-inder text-3xl lg:text-5xl font-bold text-white;
+        }
+
+        .right {
+          @apply absolute bottom-[-30px] lg:top-[100px] lg:right-[0px] w-[350px] lg:w-[400px];
+        }
+
+        .left {
+          @apply w-[300px] lg:w-auto absolute top-[-100px] lg:top-[-200px] left-[-150px] lg:left-[-250px];
+        }
+      }
+      .section_2 {
+        @apply mt-[3rem] lg:mt-[8rem] flex flex-col lg:flex-row lg:items-start gap-9;
+      }
+      .section {
+        background-image: linear-gradient(
+          170deg,
+          #199d57,
+          rgba(26, 145, 123, 1)
+        );
+        @apply py-[92px] mt-[62px];
+      }
+      .section_3 {
+        @apply flex flex-col lg:flex-row-reverse lg:items-end gap-9 max-w-[1280px] w-full mx-auto px-6 lg:px-0;
+      }
+
+      .grid-partenaire {
+        @apply grid grid-cols-2 lg:grid-cols-5 gap-3 lg:gap-6;
+      }
+
+      .partenaire_parent {
+        @apply flex items-center aspect-square justify-center bg-slate-100 rounded-xl;
+      }
+      .partenaire {
+        @apply w-[70%] aspect-square flex items-center justify-center;
+      }
+    </style>
+  </head>
+  <body>
+    <Header client:load transparent={true} />
+    <div class='banniere-mon-quartier'>
+      <div class='content'>
+        <div class='element_1'>
+          <img src='/element_1.webp' alt='' />
+        </div>
+        <div class='mb-8'>
+          <div class='text-center text-2xl text-white'>Thème</div>
+          <div>
+            <div class='title'>Résidents Responsables</div>
+            <div class='title'>...Quartier Propre</div>
+          </div>
+        </div>
+        <div class='element_2'>
+          <img src='/element_2.webp' alt='' />
+        </div>
+      </div>
+      <div class='left'>
+        <img src='/left.webp' alt='' />
+      </div>
+      <div class='right'>
+        <img src='/element_3.webp' alt='' />
+      </div>
+    </div>
+    <Section client:load>
+      <div
+        class='font-judson italic font-bold w-full lg:w-[650px] mx-auto text-3xl lg:text-5xl text-center'>
+        Faire de la zone <span
+          class='inline-block px-1 lg:px-3 py-1 lg:py-2 bg-slate-100 text-[#199d57]'
+          >Derb Ghallef</span
+        > une zone propre, résiliente, verte et digne de ses citoyens
+      </div>
+      <div class='section_2'>
+        <div class='w-full lg:w-[650px]'>
+          <img src='/earth.webp' />
+        </div>
+        <div class='flex-1 mt-6'>
+          <div class='text-3xl lg:text-5xl py-6 font-judson font-bold'>
+            Présentation du projet
+          </div>
+          <div class='mb-6'>
+            <div class='font-bold'>
+              Notre projet de quartier vert et Inclusif « DerbiNki » Vise:
+            </div>
+            Promouvoir des caractéristiques civilisationnelles durables et complètes
+            à nos quartiers, les résidents bénéficieront d’un environnement sain
+            et participeront énergétiquement et activement à la vie communautaire.
+            <br />
+            L’objectif est de redonner du bien-être aux habitants de Derb Ghallaf
+            à titre de projet pilote tout en renforçant les principes de cohésion
+            sociale et de protection de l'environnement à travers un travail participatif
+            créatif entre les citoyens du quartier et toutes les composantes de la
+            société civile et les responsables de institutions citoyennes.
+          </div>
+        </div>
+      </div>
+    </Section>
+    <div class='section' style='color: white;'>
+      <div class='section_3'>
+        <div
+          class='w-full lg:w-[500px] aspect-square flex items-center justify-center'>
+          <img src='/element_4.webp' class='w-[50%]' />
+        </div>
+        <div class='flex-1 mt-6'>
+          <div class='text-3xl lg:text-5xl py-6 font-judson font-bold'>
+            Contexte local et problématique
+          </div>
+          <div class='mb-6'>
+            Le projet <b><i>« Quartier Vert »</i></b> dans les quartiers marginalisés
+            de Casablanca, notamment à Derb Ghallaf, représente une opportunité unique
+            de promouvoir le développement durable, tout en répondant aux besoins
+            particuliers des communautés locales. En investissant dans la création
+            des espaces verts et en impliquant les familles et les résidents dans
+            leur environnement. Nous pouvons contribuer à améliorer la qualité de
+            vie, à réduire la pollution, à créer des opportunités d’emploi, à créer
+            des liens sociaux, et à transmettre des messages sur la sensibilisation
+            à l’environnement et les modes de consommation et de production durables.
+            <br />
+            <br />
+            Ce projet offre, donc, une vision future, pour des espaces plus verts
+            plus inclusifs et plus résilients dans les quartiers marginalisés de
+            Casablanca, et c’est ce qui nous rend cohérents et harmonieux avec les
+            Objectifs de Développement Durable 11 et 12 des Nations Unies, qui mettent
+            l'accent sur des villes et des institutions humaines ouvertes à tous,
+            durables, sûres et chercher à établir des modèles de consommation et
+            de production responsables et durables.
+          </div>
+        </div>
+      </div>
+    </div>
+    <Section client:load>
+      <div class='font-judson text-3xl lg:text-5xl font-bold mb-5'>
+        Partenaires
+      </div>
+      <div class='grid-partenaire'>
+        {
+          data.map((el, key) => (
+            <div class='partenaire_parent'>
+              <div class='partenaire'>
+                <img src={el.src} alt='' width='100%' height='100%' />
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </Section>
+    <Paralaxe image='/projet_quartier_propre.webp'>
+      <div
+        class='max-w-[1280px] mx-auto h-full flex flex-col justify-end py-[32px] lg:py-[62px] text-white'>
+        <div class='text-2xl'>Actualité</div>
+        <div
+          class='font-judson text-4xl lg:text-[72px] font-bold lg:w-[50%] mb-7'
+          style='line-height: 1;'>
+          Lancement du projet "Mon Quartier Propre"
+        </div>
+
+        <div>
+          <a
+            href='/programme/mon-quartier-propre'
+            class='flex w-full items-center py-5 font-semibold text-xl gap-5 text-white hover:text-white'>
+            <div
+              class='w-[56px] aspect-square rounded-full flex items-center justify-center bg-yellow-400 text-orange-900'>
+              <RiArrowRightLine className='w-6 h-6' />
+            </div>
+            Lire l'article
+          </a>
+        </div>
+      </div>
+    </Paralaxe>
+    <DonElement />
+    <Footer />
+  </body>
+</html>

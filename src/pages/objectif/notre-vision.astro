@@ -1,0 +1,68 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import DonElement from "../../components/don";
+import { Entete_page } from "../../components/entete";
+import Footer from "../../components/Footer.astro";
+import Header from "../../components/header";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
+import Citation from "../../components/citattion";
+import {
+  Paragraphe,
+  Paragraphe_1,
+  Ilot,
+  Ilot_2,
+} from "../../components/paragraphe";
+import Diaporama from "../../components/diaporama";
+import Section from "../../components/section";
+import ParalaxeArticle from "../../components/Paralaxe_Article.astro";
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <BaseHead
+      title={`Notre Vision | ${SITE_TITLE}`}
+      description={SITE_DESCRIPTION}
+    />
+    <style>
+      .section-1 {
+        @apply flex gap-9 flex-col lg:flex-row items-start;
+      }
+
+      .section_b {
+        @apply flex-1 flex-grow px-4 lg:px-9 py-4 lg:py-7 h-auto bg-[#F1FEFB];
+      }
+    </style>
+  </head>
+  <body>
+    <Header client:load />
+    <div class='h-[72px] lg:h-[86px]'></div>
+    <Entete_page client:load image='/vision.webp' titre='Notre Vision' />
+    <div class='h-[72px] lg:h-[86px]'></div>
+    <Paragraphe_1 client:load image='/ensemble.jpg'>
+      <div class='text-3xl lg:text-5xl py-6 font-judson font-bold'>
+        Ensemble, construisons un avenir meilleur pour les enfants
+      </div>
+      <div class='mb-6'>
+        Nous aspirons à un monde où chaque enfant, indépendamment de son origine
+        ou de sa situation, bénéficie d'un environnement sûr, aimant et propice
+        à son épanouissement.
+      </div>
+      <div class='mb-6'>
+        Nous envisageons une société où les droits des enfants sont pleinement
+        respectés et où chaque enfant a accès à des opportunités d'éducation, de
+        santé et de protection.
+      </div>
+      <div class='mb-6'>
+        Notre vision est de contribuer à la construction d'une communauté
+        solidaire, responsable et durable, où la protection de l'enfance est une
+        priorité collective et sociétale.
+      </div>
+    </Paragraphe_1>
+
+    <div class='h-[72px] lg:h-[86px]'></div>
+    <ParalaxeArticle />
+    <DonElement />
+    <Footer />
+  </body>
+</html>

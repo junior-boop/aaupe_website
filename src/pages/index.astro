@@ -11,6 +11,10 @@ import Section from "../components/section";
 import Element_UPE from "../components/element_upe";
 import Paralaxe from "../components/Paralaxe.astro";
 import DonElement from "../components/don";
+import { RiArrowRightLine } from "../components/icons";
+import Annonce_Banner from "../components/annonce_banner";
+import BanniereState from "../components/Banniere_state.astro";
+import ContactLine from "../components/ContactLine.astro";
 ---
 
 <!doctype html>
@@ -21,6 +25,7 @@ import DonElement from "../components/don";
   <body>
     <Header client:load />
     <div class='h-[72px] lg:h-[86px]'></div>
+    <BanniereState />
     <Tete />
     <Entete_Principal client:load />
     <Recits client:load />
@@ -130,8 +135,35 @@ import DonElement from "../components/don";
         </div>
       </div>
     </Section>
-    <Paralaxe />
+    <Paralaxe image='/mon-quartier-propre.webp'>
+      <div
+        class='max-w-[1280px] mx-auto h-full flex flex-col justify-end py-[32px] lg:py-[62px] text-white'>
+        <div class='text-2xl'>Mon Quartier Propre</div>
+        <div
+          class='font-judson text-4xl lg:text-[72px] font-bold lg:w-[50%] mb-7'
+          style='line-height: 1;'>
+          Résidents Responsables ...Quartier Propre
+        </div>
+        <div class='lg:w-[50%] mb-4 line_height'>
+          Notre projet de quartier vert et global « Derbi Nki », vise à
+          transmettre les caractéristiques d'une civilisation durable et globale
+          à nos quartiers. ...
+        </div>
+        <div>
+          <a
+            href='/programme/mon-quartier-propre'
+            class='flex w-full items-center py-5 font-semibold text-xl gap-5 text-white hover:text-white'>
+            <div
+              class='w-[56px] aspect-square rounded-full flex items-center justify-center bg-yellow-400 text-orange-900'>
+              <RiArrowRightLine className='w-6 h-6' />
+            </div>
+            Lire plus d'information
+          </a>
+        </div>
+      </div>
+    </Paralaxe>
     <DonElement />
+    <ContactLine />
     <Footer />
   </body>
 </html>

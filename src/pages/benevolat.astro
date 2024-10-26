@@ -1,0 +1,119 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import DonElement from "../components/don";
+import { Entete_page } from "../components/entete";
+import Footer from "../components/Footer.astro";
+import Header from "../components/header";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import Citation from "../components/citattion";
+import Diaporama from "../components/diaporama";
+import Section from "../components/section";
+import { Paragraphe_1 } from "../components/paragraphe";
+import {
+  RiArrowRightLine,
+  RiArrowRightUpLine,
+  RiMailSendLine,
+} from "../components/icons";
+import BanniereState from "../components/Banniere_state.astro";
+import ContactLine from "../components/ContactLine.astro";
+import Benevolat_input from "../components/benevolat/page";
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <BaseHead
+      title={`Benevolat | ${SITE_TITLE}`}
+      description={SITE_DESCRIPTION}
+    />
+    <style>
+      .section-1 {
+        @apply flex gap-9 flex-col lg:flex-row items-start;
+      }
+
+      .section_b {
+        @apply flex flex-col lg:flex-row flex-1 flex-grow px-4 lg:px-9 py-4 lg:py-9 h-auto bg-[#116d57] items-start text-white gap-6 rounded-xl;
+
+        .image {
+          @apply w-full lg:w-[400px] aspect-video bg-slate-400 rounded-lg;
+        }
+
+        &:hover .fleche {
+          @apply top-[-2px];
+        }
+      }
+
+      .title {
+        @apply font-judson font-bold text-5xl pb-11 lg:w-[50%];
+      }
+    </style>
+  </head>
+  <body>
+    <Header client:load />
+    <div class='h-[72px] lg:h-[86px]'></div>
+    <BanniereState />
+    <Entete_page
+      client:load
+      image='/mission_header.webp'
+      titre='Devenir Bénévole'
+    />
+
+    <div class='max-w-[1280px] mx-auto py-[72px]'>
+      <!-- <div class='title'>Comment vous pouvez Nous Accompagner !</div> -->
+      <Paragraphe_1 client:load image='/benevole_1.webp'>
+        <div class='font-judson text-2xl font-bold pt-3 lg:pt-0'>Bénévolat</div>
+        <div class='text-3xl lg:text-5xl pb-6 font-judson font-bold'>
+          Notre mission, au-delà des mots
+        </div>
+        <div class='mb-6'>
+          L'association d'appui à l'unité de protection de l'enfance (AAUPE) à
+          Casablanca a pour mission de garantir la protection et la sauvegarde
+          des enfants et de leurs familles en situation de vulnérabilité.
+        </div>
+        <div class='mb-6'>
+          Nous œuvrons pour prévenir et lutter contre la maltraitance,
+          l'exploitation et l'abandon des enfants, en offrant des services
+          adaptés et en mobilisant les ressources nécessaires pour favoriser
+          leur bien-être et leur développement.
+        </div>
+        <div class='mb-6'>
+          Nous travaillons en étroite collaboration avec les acteurs sociaux,
+          les institutions publiques et les communautés pour créer un
+          environnement sûr et protecteur pour tous les enfants. Nous
+          considérons que les droits des enfants sont inaliénables.
+        </div>
+      </Paragraphe_1>
+
+      <!-- <div class='py-6 px-4 lg:px-0'>
+        <div
+          class='bg-[#F1FEFB] px-4 lg:px-6 py-6 rounded-xl flex flex-col lg:flex-row items-end justify-between'>
+          <div class='lg:w-[50%]'>
+            <div class='font-judson font-bold text-3xl lg:text-5xl mb-9'>
+              Contactez nous pour devenir bénévole
+            </div>
+            <div>
+              Vous aussi, vous souhaitez vous engagez auprès des enfants et
+              jeunes ? <br /> Envoyez votre CV ainsi qu’un courrier présentant le
+              soutien que vous souhaitez apporter à <b>info@aaupe.org.ma</b>
+            </div>
+          </div>
+          <a
+            href='mailto:info@aaupe.org.ma'
+            class='mt-5 lg:mt-0 w-full lg:w-[200px] lg:aspect-square rounded-xl flex flex-col gap-6 bg-slate-800 text-white p-6 hover:text-slate-50 justify-center items-center'>
+            <div class='text-center' style='line-height: 1.1;'>
+              Envoyez-nous une e-mail
+            </div>
+            <div>
+              <RiMailSendLine className='w-20 h-20' client:load />
+            </div>
+          </a>
+        </div>
+      </div> -->
+    </div>
+
+    <Benevolat_input client:load />
+    <DonElement />
+    <ContactLine />
+    <Footer />
+  </body>
+</html>

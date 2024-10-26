@@ -1,0 +1,38 @@
+---
+import Annonce_Banner from "./annonce_banner";
+---
+
+<div class='banner overflow-hidden h-0 ease-in-out duration-300 relative'>
+  <Annonce_Banner client:load />
+
+  <button class='btn absolute top-[50%] translate-y-[-50%] right-6'>
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width='24'
+      height='24'
+      viewBox='0 0 24 24'
+      ><path
+        fill='white'
+        d='m12 10.587l4.95-4.95l1.414 1.414l-4.95 4.95l4.95 4.95l-1.415 1.414l-4.95-4.95l-4.949 4.95l-1.414-1.415l4.95-4.95l-4.95-4.95L7.05 5.638z'
+      ></path></svg
+    >
+  </button>
+</div>
+
+<script>
+  const banner = document.querySelector(".banner") as HTMLDivElement;
+  const banniere = document.querySelector(".banniere") as HTMLDivElement;
+  const btn = document.querySelector(".btn") as HTMLButtonElement;
+
+  document.onreadystatechange = (e) => {
+    if (document.readyState === "complete") {
+      setTimeout(() => {
+        banner.style.height = `${banniere.offsetHeight}px`;
+      }, 1000);
+    }
+  };
+
+  btn.addEventListener("click", () => {
+    banner.style.height = `${0}px`;
+  });
+</script>

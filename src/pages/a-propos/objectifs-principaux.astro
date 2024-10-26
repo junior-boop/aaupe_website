@@ -1,0 +1,135 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import DonElement from "../../components/don";
+import { Entete_page } from "../../components/entete";
+import Footer from "../../components/Footer.astro";
+import Header from "../../components/header";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
+import Citation from "../../components/citattion";
+import {
+  Paragraphe,
+  Paragraphe_1,
+  Ilot,
+  Ilot_2,
+} from "../../components/paragraphe";
+import Diaporama from "../../components/diaporama";
+import Section from "../../components/section";
+import { RiArrowRightLine } from "../../components/icons";
+import Paralaxe from "../../components/Paralaxe.astro";
+import BanniereState from "../../components/Banniere_state.astro";
+
+const data: {
+  title: string;
+  description: string;
+  image?: string;
+}[] = [
+  {
+    title: `Protection des Enfants`,
+    description: `Assurer la protection des enfants victimes de maltraitance, d'abandon ou d'exploitation, en leur offrant un environnement sûr et des services adaptés.`,
+    image: "/protection-enfant.avif",
+  },
+  {
+    title: `Soutien aux Familles`,
+    description: `Fournir un soutien psychosocial, juridique et matériel aux familles en difficulté pour prévenir la séparation des enfants et favoriser leur bien-être. Dans le respect de l’égalité des genres.`,
+    image: "/soutien-famille.avif",
+  },
+  {
+    title: `Sensibilisation et Éducation`,
+    description: `Sensibiliser la communauté sur les droits de l'enfant, la maltraitance et les moyens de protection, afin de promouvoir une culture de respect et de protection des enfants.`,
+    image: "/education.avif",
+  },
+  {
+    title: `Réinsertion Sociale`,
+    description: `Aider les enfants de la rue et ceux en situation de mendicité organisée à retrouver une place dans la société par le biais de programmes d'éducation, de formation et d'accompagnement.`,
+    image: "/reinsertion.avif",
+  },
+  {
+    title: `Plaidoyer`,
+    description: `Travailler avec les décideurs et les institutions pour promouvoir des politiques publiques favorables à la protection de l'enfance dans le respect de l’environnement et du développement durable et inclusif.`,
+    image: "/plaidoyer.png",
+  },
+];
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      .section-1 {
+        @apply flex gap-9 flex-col lg:flex-row items-start;
+      }
+    </style>
+  </head>
+  <body>
+    <Header client:load />
+    <div class='h-[72px] lg:h-[86px]'></div>
+    <BanniereState />
+    <Entete_page
+      client:load
+      image='/engagement.webp'
+      titre='Notre Engagement'
+    />
+    <Citation
+      client:load
+      citation="Il n'y a rien de plus important que de protéger nos enfants."
+      author='Barack Obama'
+    />
+
+    <Section>
+      {
+        data.map((el, key) => (
+          <div class='flex flex-col lg:flex-row gap-9 lg:justify-between pt-6 border-t border-slate-200 mb-[70px]'>
+            <div class='flex gap-9 flex-col lg:flex-row'>
+              <div class='flex items-start gap-10'>
+                <div class='font-judson text-7xl font-bold'>{key + 1}.</div>
+                <div
+                  class='font-judson font-bold text-4xl lg:text-[42px] lg:w-[300px]'
+                  style='line-height: 1;'>
+                  {el.title}
+                </div>
+              </div>
+              <div class='lg:w-[450px]'>{el.description}</div>
+            </div>
+            <div class='w-full aspect-video lg:aspect-auto lg:w-[290px] lg:h-[200px] bg-white border-2 rounded-lg flex items-center justify-center overflow-hidden'>
+              <img src={`${el.image}`} alt={el.image} class='w-[80%]' />
+            </div>
+          </div>
+        ))
+      }
+    </Section>
+
+    <div class='h-[72px] lg:h-[86px]'></div>
+
+    <Paralaxe image='/mon-quartier-propre.webp'>
+      <div
+        class='max-w-[1280px] mx-auto h-full flex flex-col justify-end py-[32px] lg:py-[62px] text-white'>
+        <div class='text-2xl'>Mon Quartier Propre</div>
+        <div
+          class='font-judson text-4xl lg:text-[72px] font-bold lg:w-[50%] mb-7'
+          style='line-height: 1;'>
+          Résidents Responsables ...Quartier Propre
+        </div>
+        <div class='lg:w-[50%] mb-4 line_height'>
+          Notre projet de quartier vert et global « Derbi Nki », vise à
+          transmettre les caractéristiques d'une civilisation durable et globale
+          à nos quartiers. ...
+        </div>
+        <div>
+          <a
+            href='/programme/mon-quartier-propre'
+            class='flex w-full items-center py-5 font-semibold text-xl gap-5 text-white hover:text-white'>
+            <div
+              class='w-[56px] aspect-square rounded-full flex items-center justify-center bg-yellow-400 text-orange-900'>
+              <RiArrowRightLine className='w-6 h-6' />
+            </div>
+            Lire plus d'information
+          </a>
+        </div>
+      </div>
+    </Paralaxe>
+
+    <DonElement />
+    <Footer />
+  </body>
+</html>
